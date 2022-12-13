@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "PrometheanPlugin.podspec"
+    "PrometheanPlugin.podspec",
+    "electron/"
   ],
   "author": "Kelvin Koh",
   "license": "MIT",
@@ -38,10 +39,11 @@
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api ApiPluginPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
+    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js && npm run build-electron",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "build-electron": "tsc --project electron/tsconfig.json && rollup -c electron/rollup.config.js && rimraf ./electron/build"
   },
   "devDependencies": {
     "@capacitor/android": "^4.0.0",
@@ -51,6 +53,7 @@
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
+    "@rollup/plugin-commonjs": "^23.0.4",
     "eslint": "^7.11.0",
     "prettier": "~2.3.0",
     "prettier-plugin-java": "~1.0.2",
@@ -73,6 +76,9 @@
     },
     "android": {
       "src": "android"
+    },
+    "electron": {
+      "src": "electron"
     }
   }
 }

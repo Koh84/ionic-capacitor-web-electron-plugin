@@ -10,7 +10,7 @@ let i:number = 0;
 
 export class ApiPluginWeb extends WebPlugin implements ApiPluginPlugin {
   async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
+    console.log('ECHO WEB', options);
     return options;
   }
 
