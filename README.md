@@ -15,6 +15,9 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`openMap(...)`](#openmap)
+* [`handleSocketConnect()`](#handlesocketconnect)
+* [`handleSocketSend()`](#handlesocketsend)
+* [`handleSocketClose()`](#handlesocketclose)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -48,6 +51,33 @@ openMap(options: OpenMapOptions) => Promise<OpenMapOptions>
 | **`options`** | <code><a href="#openmapoptions">OpenMapOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#openmapoptions">OpenMapOptions</a>&gt;</code>
+
+--------------------
+
+
+### handleSocketConnect()
+
+```typescript
+handleSocketConnect() => Promise<void>
+```
+
+--------------------
+
+
+### handleSocketSend()
+
+```typescript
+handleSocketSend() => Promise<void>
+```
+
+--------------------
+
+
+### handleSocketClose()
+
+```typescript
+handleSocketClose() => Promise<void>
+```
 
 --------------------
 
